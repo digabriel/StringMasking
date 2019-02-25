@@ -14,7 +14,6 @@ enum MaskCharacter: Character {
         case .numbers:
             return CharacterSet.decimalDigits
         }
-        
     }
 }
 

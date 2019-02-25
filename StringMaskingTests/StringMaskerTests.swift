@@ -14,14 +14,6 @@ class StringMaskingTests: XCTestCase {
         XCTAssertEqual(extracted, [:])
     }
     
-    func test_symbolsExtraction_extractsSymbolsWithMaskWithOneSymbol() {
-        let mask = "+"
-        let sut = StringMasker(mask: mask)
-        let extracted = sut.extractedSymbols
-        
-        XCTAssertEqual(extracted, [0:"+"])
-    }
-    
     func test_symbolsExtraction_extractsSymbolsWithMaskWithTwoSymbol() {
         let mask = "+ "
         let sut = StringMasker(mask: mask)
