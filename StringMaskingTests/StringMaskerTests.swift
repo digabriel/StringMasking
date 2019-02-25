@@ -22,6 +22,35 @@ class StringMaskingTests: XCTestCase {
         XCTAssertEqual(extractedSymbolsFromMask("+# ### - ###"), [0 : "+", 2 : " ", 6 : " ", 7 : "-", 8 : " "])
     }
     
+    func test_onlyNumbersMask_mapNumberStringCorrectly() {
+        let mask = "##"
+        let stringToMask = "12"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(stringToMask), "12")
+    }
+    
+    func test_maskBiggerThanString_mapsCorrectly() {
+        let mask = "###"
+        let stringToMask = "12"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(stringToMask), "12")
+    }
+    
+    func test_maskSmallerThanString_mapsCorrectly() {
+        let mask = "#"
+        let stringToMask = "12"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(stringToMask), "1")
+    }
+
+    func test_maskWithSymbols_mapsCorrectly() {
+        let mask = "+# ###"
+        let stringToMask = "1234"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(stringToMask), "+1 234")
+    }
+    
+    
     //MARK: - Helpers
     private func extractedSymbolsFromMask(_ mask: String) -> [Int : Character] {
         let sut = StringMasker(mask: mask)

@@ -18,15 +18,36 @@ enum MaskCharacter: Character {
 }
 
 struct StringMasker {
-    let mask: String
+    private let mask: String
+    private(set) var extractedSymbols: [Int : Character]
     
-    var extractedSymbols: [Int : Character] {
-        return mask.enumerated().reduce([:], { (result, enumeration) -> [Int : Character] in
+    init(mask: String) {
+        self.mask = mask
+        self.extractedSymbols = mask.enumerated().reduce([:], { (result, enumeration) -> [Int : Character] in
             var r = result
             if MaskCharacter(rawValue: enumeration.element) == nil {
                 r[enumeration.offset] = enumeration.element
             }
             return r
         })
+    }
+    
+    func mask(_ string: String) -> String {
+        guard !string.isEmpty else { return "" }
+        
+        var currentIndex = string.startIndex
+        let chars = mask.enumerated().compactMap { (maskEnumeration) -> Character? in
+            if let char = extractedSymbols[maskEnumeration.offset] {
+                return char
+            }else if currentIndex < string.endIndex {
+                let c = string[currentIndex]
+                currentIndex = string.index(after: currentIndex)
+                return c
+            }else {
+                return nil
+            }
+        }
+        
+        return String(chars)
     }
 }
