@@ -7,34 +7,24 @@ import XCTest
 
 class StringMaskingTests: XCTestCase {
     func test_symbolsExtraction_extractsSymbolsWithMaskWithoutSymbols() {
-        let mask = ""
-        let sut = StringMasker(mask: mask)
-        let extracted = sut.extractedSymbols
-        
-        XCTAssertEqual(extracted, [:])
+        XCTAssertEqual(extractedSymbolsFromMask(""), [:])
     }
     
     func test_symbolsExtraction_extractsSymbolsWithMaskWithTwoSymbol() {
-        let mask = "+ "
-        let sut = StringMasker(mask: mask)
-        let extracted = sut.extractedSymbols
-        
-        XCTAssertEqual(extracted, [0 : "+", 1 : " "])
+        XCTAssertEqual(extractedSymbolsFromMask("+ "), [0 : "+", 1 : " "])
     }
     
     func test_symbolsExtraction_extractsSymbolsWithMaskWithSymbolsAndOneMaskCharacter() {
-        let mask = "+# "
-        let sut = StringMasker(mask: mask)
-        let extracted = sut.extractedSymbols
-        
-        XCTAssertEqual(extracted, [0 : "+", 2 : " "])
+        XCTAssertEqual(extractedSymbolsFromMask("+# "), [0 : "+", 2 : " "])
     }
     
     func test_symbolsExtraction_extractsSymbolsWithMaskWithSymbolsAndMultipleMaskCharacters() {
-        let mask = "+# ### - ###"
+        XCTAssertEqual(extractedSymbolsFromMask("+# ### - ###"), [0 : "+", 2 : " ", 6 : " ", 7 : "-", 8 : " "])
+    }
+    
+    //MARK: - Helpers
+    private func extractedSymbolsFromMask(_ mask: String) -> [Int : Character] {
         let sut = StringMasker(mask: mask)
-        let extracted = sut.extractedSymbols
-        
-        XCTAssertEqual(extracted, [0 : "+", 2 : " ", 6 : " ", 7 : "-", 8 : " "])
+        return sut.extractedSymbols
     }
 }
