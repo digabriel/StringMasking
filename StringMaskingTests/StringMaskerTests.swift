@@ -37,10 +37,10 @@ class StringMaskingTests: XCTestCase {
     }
     
     func test_maskSmallerThanString_mapsCorrectly() {
-        let mask = "#"
-        let stringToMask = "12"
+        let mask = "#+##"
+        let stringToMask = "12345"
         let sut = StringMasker(mask: mask)
-        XCTAssertEqual(sut.mask(stringToMask), "1")
+        XCTAssertEqual(sut.mask(stringToMask), "1+23")
     }
 
     func test_maskWithSymbols_mapsCorrectly() {
@@ -50,6 +50,23 @@ class StringMaskingTests: XCTestCase {
         XCTAssertEqual(sut.mask(stringToMask), "+1 234")
     }
     
+    func test_stringWithNonNumbersCharacters_mapsCorrectly() {
+        let mask = "+# ###"
+        let stringToMask = "12aa567"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(stringToMask), "+1 2")
+    }
+    
+    func test_phoneMask_mapsPhoneNumber() {
+        let mask = "+# (###) ###-####"
+        let phoneNumber = "18005550123"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.mask(phoneNumber), "+1 (800) 555-0123")
+    }
+    
+    func test_maskedString_removesSymbols() {
+        
+    }
     
     //MARK: - Helpers
     private func extractedSymbolsFromMask(_ mask: String) -> [Int : Character] {

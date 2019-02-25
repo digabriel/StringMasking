@@ -15,6 +15,11 @@ enum MaskCharacter: Character {
             return CharacterSet.decimalDigits
         }
     }
+    
+    func contains(character c: Character) -> Bool {
+        let set = CharacterSet(charactersIn: "\(c)")
+        return set.isSubset(of: characterSet)
+    }
 }
 
 struct StringMasker {
@@ -42,7 +47,12 @@ struct StringMasker {
             }else if currentIndex < string.endIndex {
                 let c = string[currentIndex]
                 currentIndex = string.index(after: currentIndex)
-                return c
+                
+                if let maskCharacter = MaskCharacter(rawValue: maskEnumeration.element) {
+                    return maskCharacter.contains(character: c) ? c : nil
+                }else {
+                    return nil
+                }
             }else {
                 return nil
             }
