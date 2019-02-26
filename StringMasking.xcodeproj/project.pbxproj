@@ -10,6 +10,9 @@
 		13108810222479FA00641FEB /* StringMasking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13108806222479FA00641FEB /* StringMasking.framework */; };
 		13108815222479FA00641FEB /* StringMaskerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13108814222479FA00641FEB /* StringMaskerTests.swift */; };
 		1310882122247A2400641FEB /* StringMasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1310882022247A2400641FEB /* StringMasker.swift */; };
+		13C7344B222560E1005A5E20 /* StringMasking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C73442222560E1005A5E20 /* StringMasking.framework */; };
+		13C734592225624A005A5E20 /* StringMaskerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13108814222479FA00641FEB /* StringMaskerTests.swift */; };
+		13C7345A2225624E005A5E20 /* StringMasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1310882022247A2400641FEB /* StringMasker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +23,13 @@
 			remoteGlobalIDString = 13108805222479FA00641FEB;
 			remoteInfo = StringMasking;
 		};
+		13C7344C222560E1005A5E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 131087FD222479FA00641FEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13C73441222560E1005A5E20;
+			remoteInfo = StringMasking_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +39,8 @@
 		13108814222479FA00641FEB /* StringMaskerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMaskerTests.swift; sourceTree = "<group>"; };
 		13108816222479FA00641FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1310882022247A2400641FEB /* StringMasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMasker.swift; sourceTree = "<group>"; };
+		13C73442222560E1005A5E20 /* StringMasking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StringMasking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C7344A222560E1005A5E20 /* StringMasking_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringMasking_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +56,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				13108810222479FA00641FEB /* StringMasking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C7343F222560E1005A5E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C73447222560E1005A5E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C7344B222560E1005A5E20 /* StringMasking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +91,8 @@
 			children = (
 				13108806222479FA00641FEB /* StringMasking.framework */,
 				1310880F222479FA00641FEB /* StringMaskingTests.xctest */,
+				13C73442222560E1005A5E20 /* StringMasking.framework */,
+				13C7344A222560E1005A5E20 /* StringMasking_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +119,13 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		13108801222479FA00641FEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C7343D222560E1005A5E20 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,6 +171,42 @@
 			productReference = 1310880F222479FA00641FEB /* StringMaskingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		13C73441222560E1005A5E20 /* StringMasking_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13C73457222560E1005A5E20 /* Build configuration list for PBXNativeTarget "StringMasking_iOS" */;
+			buildPhases = (
+				13C7343D222560E1005A5E20 /* Headers */,
+				13C7343E222560E1005A5E20 /* Sources */,
+				13C7343F222560E1005A5E20 /* Frameworks */,
+				13C73440222560E1005A5E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StringMasking_iOS;
+			productName = StringMasking_iOS;
+			productReference = 13C73442222560E1005A5E20 /* StringMasking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		13C73449222560E1005A5E20 /* StringMasking_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13C73458222560E1005A5E20 /* Build configuration list for PBXNativeTarget "StringMasking_iOSTests" */;
+			buildPhases = (
+				13C73446222560E1005A5E20 /* Sources */,
+				13C73447222560E1005A5E20 /* Frameworks */,
+				13C73448222560E1005A5E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13C7344D222560E1005A5E20 /* PBXTargetDependency */,
+			);
+			name = StringMasking_iOSTests;
+			productName = StringMasking_iOSTests;
+			productReference = 13C7344A222560E1005A5E20 /* StringMasking_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +222,12 @@
 						LastSwiftMigration = 1010;
 					};
 					1310880E222479FA00641FEB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					13C73441222560E1005A5E20 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					13C73449222560E1005A5E20 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -168,6 +246,8 @@
 			targets = (
 				13108805222479FA00641FEB /* StringMasking */,
 				1310880E222479FA00641FEB /* StringMaskingTests */,
+				13C73441222560E1005A5E20 /* StringMasking_iOS */,
+				13C73449222560E1005A5E20 /* StringMasking_iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +261,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1310880D222479FA00641FEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C73440222560E1005A5E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C73448222560E1005A5E20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,6 +300,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13C7343E222560E1005A5E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C7345A2225624E005A5E20 /* StringMasker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C73446222560E1005A5E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C734592225624A005A5E20 /* StringMaskerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,6 +323,11 @@
 			isa = PBXTargetDependency;
 			target = 13108805222479FA00641FEB /* StringMasking */;
 			targetProxy = 13108811222479FA00641FEB /* PBXContainerItemProxy */;
+		};
+		13C7344D222560E1005A5E20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13C73441222560E1005A5E20 /* StringMasking_iOS */;
+			targetProxy = 13C7344C222560E1005A5E20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,6 +546,106 @@
 			};
 			name = Release;
 		};
+		13C73453222560E1005A5E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PBE6X9PZJ3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StringMasking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.dimasgabriel.StringMasking-iOS";
+				PRODUCT_NAME = StringMasking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13C73454222560E1005A5E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PBE6X9PZJ3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StringMasking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.dimasgabriel.StringMasking-iOS";
+				PRODUCT_NAME = StringMasking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13C73455222560E1005A5E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PBE6X9PZJ3;
+				INFOPLIST_FILE = StringMasking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.dimasgabriel.StringMasking-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13C73456222560E1005A5E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PBE6X9PZJ3;
+				INFOPLIST_FILE = StringMasking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.dimasgabriel.StringMasking-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +672,24 @@
 			buildConfigurations = (
 				1310881E222479FA00641FEB /* Debug */,
 				1310881F222479FA00641FEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13C73457222560E1005A5E20 /* Build configuration list for PBXNativeTarget "StringMasking_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C73453222560E1005A5E20 /* Debug */,
+				13C73454222560E1005A5E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13C73458222560E1005A5E20 /* Build configuration list for PBXNativeTarget "StringMasking_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C73455222560E1005A5E20 /* Debug */,
+				13C73456222560E1005A5E20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
