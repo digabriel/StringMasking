@@ -26,7 +26,7 @@ public struct StringMasker {
     private let mask: String
     private(set) var extractedSymbols: [Int : Character]
     
-    init(mask: String) {
+    public init(mask: String) {
         self.mask = mask
         self.extractedSymbols = mask.enumerated().reduce([:], { (result, enumeration) -> [Int : Character] in
             var r = result
