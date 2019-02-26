@@ -60,4 +60,8 @@ struct StringMasker {
         
         return String(chars)
     }
+    
+    func rawString(from maskedString: String) -> String {
+        return maskedString.filter {!extractedSymbols.values.contains($0)}
+    }
 }

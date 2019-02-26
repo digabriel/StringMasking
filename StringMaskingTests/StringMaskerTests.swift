@@ -65,7 +65,10 @@ class StringMaskingTests: XCTestCase {
     }
     
     func test_maskedString_removesSymbols() {
-        
+        let mask = "+# (###) ###-####"
+        let phoneNumber = "+1 (800) 555-0123"
+        let sut = StringMasker(mask: mask)
+        XCTAssertEqual(sut.rawString(from: phoneNumber), "18005550123")
     }
     
     //MARK: - Helpers
