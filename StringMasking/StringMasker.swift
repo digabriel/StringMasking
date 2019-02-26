@@ -42,9 +42,13 @@ public struct StringMasker {
         
         var currentIndex = string.startIndex
         let chars = mask.enumerated().compactMap { (maskEnumeration) -> Character? in
+            if currentIndex >= string.endIndex {
+                return nil
+            }
+            
             if let char = extractedSymbols[maskEnumeration.offset] {
                 return char
-            }else if currentIndex < string.endIndex {
+            }else {
                 let c = string[currentIndex]
                 currentIndex = string.index(after: currentIndex)
                 
@@ -53,8 +57,6 @@ public struct StringMasker {
                 }else {
                     return nil
                 }
-            }else {
-                return nil
             }
         }
         
