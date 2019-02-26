@@ -22,7 +22,7 @@ enum MaskCharacter: Character {
     }
 }
 
-struct StringMasker {
+public struct StringMasker {
     private let mask: String
     private(set) var extractedSymbols: [Int : Character]
     
@@ -37,7 +37,7 @@ struct StringMasker {
         })
     }
     
-    func mask(_ string: String) -> String {
+    public func mask(_ string: String) -> String {
         guard !string.isEmpty else { return "" }
         
         var currentIndex = string.startIndex
@@ -61,7 +61,7 @@ struct StringMasker {
         return String(chars)
     }
     
-    func rawString(from maskedString: String) -> String {
+    public func rawString(from maskedString: String) -> String {
         return maskedString.filter {!extractedSymbols.values.contains($0)}
     }
 }
