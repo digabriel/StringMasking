@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "StringMasking"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "A simple String Masking tool for Swift."
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   
 
   # This description is used to generate tags and improve search results.
